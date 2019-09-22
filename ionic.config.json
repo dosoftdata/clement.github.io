@@ -1,0 +1,7 @@
+{
+  "name": "tripPlanning",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

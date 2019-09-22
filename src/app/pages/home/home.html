@@ -1,0 +1,45 @@
+<app-header></app-header>
+<ion-content class="ion-no-padding">
+     <div class="content-home">
+       <ion-grid>
+         <ion-row>
+           <label for="input-from" class="input">
+             <input
+                     autocorrect="off"
+                     autocapitalize="off"
+                     spellcheck="off"
+                     type="text"
+                     class="form-control"
+                     #tripFrom
+                     type="text" id="input-from"
+                     placeholder="&nbsp;"
+                     [value]="fromMyLocation"
+             >
+             <span class="label">Trip from</span>
+             <span class="border"></span>
+           </label>
+         </ion-row>
+         <ion-row style="margin-top: 20px">
+           <label for="input-to" class="input">
+             <input
+                     autocorrect="off"
+                     autocapitalize="off"
+                     spellcheck="off"
+                     type="text"
+                     class="form-control"
+                     #tripTo
+                     type="text" id="input-to"
+                     placeholder="&nbsp;"
+             >
+             <span class="label">Trip to</span>
+             <span class="border"></span>
+           </label>
+         </ion-row>
+       </ion-grid>
+       </div>
+</ion-content>
+<ion-footer>
+  <ion-button color="medium" expand="full" (tap)="startTrip($event)">
+     <ion-text> Start Trip </ion-text>
+  </ion-button>
+</ion-footer>

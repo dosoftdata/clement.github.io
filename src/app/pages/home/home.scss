@@ -1,0 +1,95 @@
+.content-home {
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin-top: 25vh;
+  margin-bottom: 35vh;
+  .input {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 280px;
+    .label {
+      position: absolute;
+      top: 16px;
+      left: 0;
+      font-size: 16px;
+      color: #9098a9;
+      font-weight: 500;
+      transform-origin: 0 0;
+      transition: all 0.2s ease;
+    }
+    .border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: #07f;
+      -webkit-transform: scaleX(0);
+      /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+      -ms-transform: scaleX(0);
+      /* IE 9 */
+      transform: scaleX(0);
+      /* IE 10, Fx 16+, Op 12.1+ */
+      -webkit-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transition: all 0.15s ease;
+      -moz-transition: all 0.15s ease;
+      -o-transition: all 0.15s ease;
+      transition: all 0.15s ease;
+    }
+    input {
+      -webkit-appearance: none;
+      width: 100%;
+      border: 0;
+      font-family: inherit;
+      padding: 12px 0;
+      height: 48px;
+      font-size: 16px;
+      font-weight: 500;
+      border-bottom: 2px solid #c8ccd4;
+      background: none;
+      border-radius: 0;
+      color: #223254;
+      -webkit-transition: all 0.15s ease;
+      -moz-transition: all 0.15s ease;
+      -o-transition: all 0.15s ease;
+      transition: all 0.15s ease;
+      &:hover {
+        background: rgba(34, 50, 84, 0.03);
+      }
+      &:not(:placeholder-shown) + span {
+        color: #5a667f;
+        -webkit-transform: translateY(-26px) scale(0.75);
+        /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+        -ms-transform: translateY(-26px) scale(0.75);
+        /* IE 9 */
+        transform: translateY(-26px) scale(0.75);
+        /* IE 10, Fx 16+, Op 12.1+ */
+      }
+      &:focus {
+        background: none;
+        outline: none;
+        + span {
+          color: #07f;
+          -webkit-transform: translateY(-26px) scale(0.75);
+          /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+          -ms-transform: translateY(-26px) scale(0.75);
+          /* IE 9 */
+          transform: translateY(-26px) scale(0.75);
+          /* IE 10, Fx 16+, Op 12.1+ */
+          + .border {
+            -webkit-transform: scaleX(1);
+            /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+            -ms-transform: scaleX(1);
+            /* IE 9 */
+            transform: scaleX(1);
+            /* IE 10, Fx 16+, Op 12.1+ */
+          }
+        }
+      }
+    }
+  }
+}

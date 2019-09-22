@@ -1,0 +1,56 @@
+<app-header title="{{ title }}"></app-header>
+
+<ion-content>
+    <agm-map
+            [latitude]="userLat"
+            [longitude]="userLng"
+            [fullscreenControl]="false"
+            [disableDefaultUI]="true"
+            [styles]="mapStyles"
+            [mapTypeControl]="false"
+            [zoomControl]="false"
+            [usePanning]='true'
+            [streetViewControl]="false"
+    >
+        <agm-marker
+                [latitude]="userLat"
+                [longitude]="userLng"
+                title="Me"
+                [iconUrl]="curUserMapIcon"
+            >
+            <agm-info-window>
+                <h6>You are here!</h6>
+            </agm-info-window>
+        </agm-marker>
+
+        <agm-circle
+                [latitude]="userLat"
+                [longitude]="userLng"
+                strokeOpacity="1.0"
+                fillOpacity="0.5"
+                strokeColor="rgba(0,72,255,.2)"
+                fillColor="rgba(0,72,255,.3)"
+                radius="900"
+        >
+        </agm-circle>
+
+        <agm-direction
+                [origin]="origin"
+                [destination]="destination"
+                [renderOptions]="directionRenderOptions"
+                [markerOptions]="directionMarkerOptions"
+        >
+        </agm-direction>
+    </agm-map>
+</ion-content>
+<ion-footer>
+    <div class="ion-padding">
+        <ion-row lines="none">
+            <ion-text> Distance : {{ tripDistanceTime['distance'] }}</ion-text>
+        </ion-row>
+        <ion-row lines="none">
+            <ion-text> Duration : {{ tripDistanceTime['duration'] }} </ion-text>
+        </ion-row>
+        <ion-text small> The Distance and Duration are Driving based </ion-text>
+    </div>
+</ion-footer>

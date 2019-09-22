@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+    {{ title || 'Trip Planning' }}
+    </ion-title>
+    <ion-buttons slot="start" *ngIf="title">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    
+    <ion-button slot="end" color="medium" (tap)="facebookLogin($event)" *ngIf="!isLoggedUser">
+      <ion-icon slot="icon-only" name="log-in"></ion-icon>
+    </ion-button>
+    
+    <ion-button slot="end" color="medium" (tap)="facebookLogOut($event)" *ngIf="isLoggedUser">
+      <ion-icon slot="icon-only" name="log-out"></ion-icon>
+    </ion-button>
+    
+  </ion-toolbar>
+</ion-header>
